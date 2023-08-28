@@ -47,21 +47,21 @@ int	ft_found_s(char *s, int i)
 	return (i);
 }
 
-int	ft_found_x(unsigned int u, int i)
+int	ft_found_x(unsigned int x, int i)
 {
-	if (u == 0)
+	if (x == 0)
 		i = ft_printf_write('0', i);
-	else if (u >= 16)
+	else if (x >= 16)
 	{
-		i = ft_found_x(u / 16, i);
-		i = ft_found_x(u % 16, i);
+		i = ft_found_x(x / 16, i);
+		i = ft_found_x(x % 16, i);
 	}
 	else
 	{
-		if (u <= 9)
-			i = ft_printf_write(u + '0', i);
+		if (x <= 9)
+			i = ft_printf_write(x + '0', i);
 		else
-			i = ft_printf_write(u + 'a' - 10, i);
+			i = ft_printf_write(x + 'a' - 10, i);
 	}
 	return (i);
 }
